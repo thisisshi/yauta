@@ -8,11 +8,11 @@ def read(fname):
 
 
 setup(
-    name="nikola",
+    name="yauta",
     version='0.0.0.1',
-    description="unofficial sdk for tesla vehicles",
+    description="yet another unofficial tesla api",
     long_description=read('README.md'),
-    url="https://github.com/thisisshi/tesla",
+    url="https://github.com/thisisshi/yauta",
     install_requires=[
         "requests"
     ],

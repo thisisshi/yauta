@@ -1,4 +1,4 @@
-## nikola - TeslaAPI
+## yauta - TeslaAPI
 hacking on cars
 
 
@@ -32,7 +32,7 @@ Tesla's client id and secret can be found with a cursory google search
 import os
 import time
 import pprint
-from nikola.tesla import TeslaAPI
+from yauta.tesla import TeslaAPI
 
 
 t = TeslaAPI(

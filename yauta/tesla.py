@@ -2,8 +2,8 @@ from requests import Session, HTTPError
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
-from nikola.exceptions import TeslaAuthException
-from nikola.vehicle import TeslaVehicle
+from yauta.exceptions import TeslaAuthException
+from yauta.vehicle import TeslaVehicle
 
 
 class TeslaAPI(Session):
