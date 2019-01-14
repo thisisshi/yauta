@@ -4,7 +4,8 @@ hacking on cars
 ```python
 import os
 import time
-from tesla import TeslaAPI
+import pprint
+from nikola.tesla import TeslaAPI
 
 
 t = TeslaAPI(
@@ -19,7 +20,9 @@ my_car = vehicles[0]
 
 my_car.wake()
 
-time.sleep(30)
+# vehicle data can only be pulled when the vehicle is "online"
+time.sleep(90)
 
-my_car.get_vehicle_data()
+data = my_car.get_vehicle_data()
+pprint.pprint(data)
 ```

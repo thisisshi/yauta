@@ -6,3 +6,4 @@ __pycache__/
 pip-selfcheck.json
 *.swp
 pyvenv.cfg
+nikola.egg-info
