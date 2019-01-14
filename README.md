@@ -1,5 +1,32 @@
-## TeslaAPI
+## nikola - TeslaAPI
 hacking on cars
+
+
+## Installation
+Ensure that you have python3 and virtualenv installed on your machine. Then,
+simply use the Makefile to install:
+
+```shell
+$ make install
+```
+
+## Removal
+
+```shell
+$ make clean
+```
+
+## Usage
+
+Set the following environment variables to allow the sdk to reach out to
+Tesla's API:
+
+- `TESLA_EMAIL`: the email address of your Tesla account
+- `TESLA_PASSWORD`: the password to your Tesla account
+- `TESLA_CLIENT_ID`: client id for the API
+- `TESLA_CLIENT_SECRET`: client secret for the API
+
+Tesla's client id and secret can be found with a cursory google search
 
 ```python
 import os
