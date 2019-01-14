@@ -1,7 +1,7 @@
 import os
 import pprint
 import time
-from nikola.tesla import TeslaAPI
+from yauta.tesla import TeslaAPI
 
 
 t = TeslaAPI(
