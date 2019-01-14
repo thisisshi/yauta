@@ -47,7 +47,7 @@ class TeslaAPI(Session):
         return super(TeslaAPI, self).patch(url, *args, **kwargs)
 
     def _get_access_token(self, access_token=None):
-        if not access_token:
+        if access_token is None:
             oauth_url = '/oauth/token?grant_type=password'
             payload = {
                 'grant_type': 'password',
