@@ -42,6 +42,8 @@ t = TeslaAPI(
    client_secret=os.environ.get('TESLA_CLIENT_SECRET')
 )
 
+t.initialize()
+
 vehicles = t.get_vehicles()
 my_car = vehicles[0]
 

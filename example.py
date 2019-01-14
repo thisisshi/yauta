@@ -10,6 +10,7 @@ t = TeslaAPI(
    client_id=os.environ.get('TESLA_CLIENT_ID'),
    client_secret=os.environ.get('TESLA_CLIENT_SECRET')
 )
+t.initialize()
 
 vehicles = t.get_vehicles()
 print('Got %s vehicles' % len(vehicles))
