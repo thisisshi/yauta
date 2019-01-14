@@ -21,13 +21,13 @@ class TeslaAPI(Session):
         retries = Retry(
             total=5,
             backoff_factor=1,
-            status_forcelist=[ 502, 503, 504 ]
+            status_forcelist=[408, 502, 503, 504]
         )
         self.mount('https://', HTTPAdapter(max_retries=retries))
 
-    def initialize(self):
+    def initialize(self, access_token=None):
         try:
-            self.headers.update(self._get_access_token())
+            self.headers.update(self._get_access_token(access_token))
         except HTTPError as e:
             raise TeslaAuthException(
                 'Unable to initialize, token fetch failed: %s' % e
@@ -46,18 +46,20 @@ class TeslaAPI(Session):
         url = self.prefix_url + url
         return super(TeslaAPI, self).patch(url, *args, **kwargs)
 
-    def _get_access_token(self):
-        oauth_url = '/oauth/token?grant_type=password'
-        payload = {
-            'grant_type': 'password',
-            'client_id': self.client_id,
-            'client_secret': self.client_secret,
-            'email': self.email,
-            'password': self.password
-        }
-        resp = self.post(oauth_url, data=payload)
-        resp.raise_for_status()
-        return {'Authorization': 'Bearer %s' % resp.json()['access_token']}
+    def _get_access_token(self, access_token=None):
+        if not access_token:
+            oauth_url = '/oauth/token?grant_type=password'
+            payload = {
+                'grant_type': 'password',
+                'client_id': self.client_id,
+                'client_secret': self.client_secret,
+                'email': self.email,
+                'password': self.password
+            }
+            resp = self.post(oauth_url, data=payload)
+            resp.raise_for_status()
+            access_token = resp.json()['access_token']
+        return {'Authorization': 'Bearer %s' % access_token}
 
     def get_vehicles(self):
         """
