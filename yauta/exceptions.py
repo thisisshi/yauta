@@ -8,4 +8,3 @@ class TeslaAuthException(TeslaException):
     """
     Tesla Auth exception
     """
-
