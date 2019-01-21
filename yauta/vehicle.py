@@ -1,16 +1,6 @@
 class TeslaVehicle(object):
-    def __init__(self, vehicle, api):
-        self.id = vehicle['id']
-        self.vehicle_id = vehicle['vehicle_id']
-        self.vin = vehicle['vin']
-        self.display_name = vehicle['display_name']
-        self.option_codes = vehicle['option_codes'] # TODO: turn this into an array
-        self.color = vehicle['color']
-        self.state = vehicle['state']
-        self.in_service = vehicle['in_service']
-        self.calendar_enabled = vehicle['calendar_enabled']
-        self.api_version = vehicle['api_version']
-
+    def __init__(self, id, api):
+        self.id = id
         self.api = api
         self.api.prefix_url = self.api.prefix_url + '/api/1/vehicles/%s' % self.id
 
@@ -32,35 +22,35 @@ class TeslaVehicle(object):
 
     def remote_start_drive(self):
         url = '/command/remote_start_drive'
-        raise NotImplemented
+        raise NotImplementedError
 
     def speed_limit_set_limit(self, limit):
         """
         input
         limit: (int) speed limit in mph, must be between 50 and 90
         """
-        raise NotImplemented
+        raise NotImplementedError
 
     def speed_limit_activate(self, pin):
         """
         input
         pin: (str) existing pin if previously set or a new pin
         """
-        raise NotImplemented
+        raise NotImplementedError
 
     def speed_limit_deactivate(self, pin):
         """
         input
         pin: (str) pin to deactivate speed limit
         """
-        raise NotImplemented
+        raise NotImplementedError
 
     def speed_limit_clear_pin(self, pin):
         """
         input
         pin: (str) pin used when activating speed limit
         """
-        raise NotImplemented
+        raise NotImplementedError
 
     def set_valet_mode(self, state, pin):
         """
@@ -68,48 +58,48 @@ class TeslaVehicle(object):
         state: (bool) true to activate, false to deactivate
         pin: (str) pin to deactivate valet mode
         """
-        raise NotImplemented
+        raise NotImplementedError
 
     def reset_valet_pin(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     def door_unlock(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     def door_lock(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     def actuate_trunk(self, position):
         """
         input:
         position: (str) either `front` or `rear`
         """
-        raise NotImplemented
+        raise NotImplementedError
 
     def sun_roof_control(self, state):
         """
         input:
         state: (str) either `vent` or `close`
         """
-        raise NotImplemented
+        raise NotImplementedError
 
     def charge_port_door_open(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     def charge_port_door_close(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     def charge_start(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     def charge_stop(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     def charge_standard(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     def charge_max_range(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     def set_charge_limit(self, percent):
         """
@@ -117,13 +107,13 @@ class TeslaVehicle(object):
         percent: (int) ther percentage the battery will be
         charged until must be between 10 and 100
         """
-        raise NotImplemented
+        raise NotImplementedError
 
     def auto_conditioning_start(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     def auto_conditioning_stop(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     def set_temps(self, driver_temp, passenger_temp):
         """
@@ -131,7 +121,7 @@ class TeslaVehicle(object):
         driver_temp: (long) desired temp on driver's side in celsius
         passenger_temp: (long) desired temp on driver's side in celsius
         """
-        raise NotImplemented
+        raise NotImplementedError
 
     def remote_seat_heater_request(self, heater, level):
         """
@@ -139,28 +129,28 @@ class TeslaVehicle(object):
         heater: (int) desired seat to heat (0-4)
         level: (int) desired level for heater (0-3)
         """
-        raise NotImplemented
+        raise NotImplementedError
 
     def media_toggle_playback(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     def media_next_track(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     def media_prev_track(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     def media_next_fav(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     def media_prev_fav(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     def media_volume_up(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     def media_volume_down(self):
-        raise NotImplemented
+        raise NotImplementedError
 
     def navigation_request(self, locale, value):
         """
@@ -168,7 +158,7 @@ class TeslaVehicle(object):
         locale: (str) the locale for the navigation request
         value: (str) the address to set as the destination
         """
-        raise NotImplemented
+        raise NotImplementedError
 
     def schedule_software_update(self, offset_sec):
         """
@@ -176,7 +166,7 @@ class TeslaVehicle(object):
         offset_sec: (int) number of seconds in the future
         to schedule the software update
         """
-        raise NotImplemented
+        raise NotImplementedError
 
     def cancel_software_update(self):
-        raise NotImplemented
+        raise NotImplementedError

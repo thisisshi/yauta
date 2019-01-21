@@ -47,7 +47,7 @@ class TeslaAPI(Session):
         return super(TeslaAPI, self).patch(url, *args, **kwargs)
 
     def _get_access_token(self, access_token=None):
-        if access_token is None:
+        if not access_token:
             oauth_url = '/oauth/token?grant_type=password'
             payload = {
                 'grant_type': 'password',
@@ -73,5 +73,5 @@ class TeslaAPI(Session):
         """
         vehicles_url = '/api/1/vehicles'
         vehicles = self.get(vehicles_url).json()['response']
-        vehicle_list = [TeslaVehicle(v, self) for v in vehicles]
+        vehicle_list = [TeslaVehicle(v['id'], self) for v in vehicles]
         return vehicle_list

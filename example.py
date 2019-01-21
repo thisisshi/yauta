@@ -10,7 +10,13 @@ t = TeslaAPI(
    client_id=os.environ.get('TESLA_CLIENT_ID'),
    client_secret=os.environ.get('TESLA_CLIENT_SECRET')
 )
-t.initialize()
+
+access_token = os.environ.get('TESLA_ACCESS_TOKEN')
+
+if access_token:
+    t.initialize(access_token=access_token)
+else:
+    t.initialize()
 
 vehicles = t.get_vehicles()
 print('Got %s vehicles' % len(vehicles))
@@ -20,6 +26,7 @@ print('Car: %s' % my_car.id)
 
 print('Waking up car...')
 resp = my_car.wake_up()
+my_car.honk_horn()
 pprint.pprint(resp)
 
 time.sleep(30)
