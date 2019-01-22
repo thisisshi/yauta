@@ -25,6 +25,16 @@ class TeslaAPI(Session):
         )
         self.mount('https://', HTTPAdapter(max_retries=retries))
 
+    def __copy__(self):
+        return type(self)(
+            self.prefix_url,
+            self.client_id,
+            self.client_secret,
+            self.email,
+            self.password,
+            self.headers
+        )
+
     def initialize(self, access_token=None):
         try:
             self.headers.update(self._get_access_token(access_token))
@@ -59,6 +69,7 @@ class TeslaAPI(Session):
             resp = self.post(oauth_url, data=payload)
             resp.raise_for_status()
             access_token = resp.json()['access_token']
+        self.access_token = access_token
         return {'Authorization': 'Bearer %s' % access_token}
 
     def get_vehicles(self):
@@ -73,5 +84,5 @@ class TeslaAPI(Session):
         """
         vehicles_url = '/api/1/vehicles'
         vehicles = self.get(vehicles_url).json()['response']
-        vehicle_list = [TeslaVehicle(v['id'], self) for v in vehicles]
+        vehicle_list = [TeslaVehicle(v['id'], self) for v in vehicles] # noqa
         return vehicle_list

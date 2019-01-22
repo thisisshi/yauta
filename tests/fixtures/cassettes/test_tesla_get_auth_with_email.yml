@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: grant_type=password&client_id=TESLA_CLIENT_ID&client_secret=TESLA_CLIENT_SECRET&email=TESLA_EMAIL&password=TESLA_PASSWORD
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Length: ['220']
+      Content-Type: [application/x-www-form-urlencoded]
+      User-Agent: [python-requests/2.21.0]
+    method: POST
+    uri: https://owner-api.teslamotors.com/oauth/token?grant_type=password
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAzzNMW4EIQxA0btQb2FjDPZeZmSMUVaRkhUzRaJV7h6UIu0v/nslc4/zPK7P9/hI
+        98QVVXSG+8DW0QOaj+g8zQSYabiq0ayM5EQUOtVzhkoximH2dEt/q+P6fsb+9bAVa9f4ej5WnMdj
+        KyQiAHBLK+Zub/96qWUK1G4aglIkaBqH5FnVTFsxwTYMoio3V2nOzOqubXToAH07vsKuGIdd6Y5c
+        BLForj+/AAAA//8DAFIqhPzpAAAA
+    headers:
+      Cache-Control: [no-store]
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Mon, 21 Jan 2019 23:55:26 GMT']
+      ETag: [W/"0182cdce05699ddc0027d3b5f763fb57"]
+      Pragma: [no-cache]
+      Server: [nginx]
+      Transfer-Encoding: [chunked]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN, SAMEORIGIN]
+      X-Request-Id: [37c7d5bb-e5be-4fc7-b537-a3340c74d6f4]
+      X-Runtime: ['0.398629']
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1

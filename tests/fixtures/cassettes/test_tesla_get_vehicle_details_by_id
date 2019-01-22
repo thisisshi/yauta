@@ -1,0 +1,65 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [TESLA_ACCESS_TOKEN]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: https://owner-api.teslamotors.com/api/1/vehicles/xxxxxxxx/vehicle_data
+  response:
+    body:
+      string: !!binary |
+        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
+        laQoYwm1tbUAAAAA//8DAFOQ9M3LEAAA
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Connection: [keep-alive]
+      Content-Encoding: [gzip]
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Tue, 22 Jan 2019 00:36:15 GMT']
+      ETag: [W/"6ba7c530630a75a5656e3c7b64f47abc"]
+      Server: [nginx]
+      Transfer-Encoding: [chunked]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN, SAMEORIGIN]
+      X-Request-Id: [fdca1f74-5600-4def-a89b-770d1cb46678]
+      X-Runtime: ['0.804233']
+      X-TXID: [71491ff51dea744f913e1ead4e372072]
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1

@@ -1,0 +1,29 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Authorization: [TESLA_ACCESS_TOKEN]
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.21.0]
+    method: GET
+    uri: https://owner-api.teslamotors.com/api/1/vehicles
+  response:
+    body: {string: '{"response":[{"id":1234,"vehicle_id":1234,"vin":"1234","display_name":"Ghost","option_codes":"AD15,MDL3,PBSB,RENA,BT37,ID3W,RF3G,S3PB,DRLH,DV2W,W39B,APF0,COUS,BC3B,CH07,PC30,FC3P,FG31,GLFR,HL31,HM31,IL31,LTPB,MR31,FM3B,RS3H,SA3P,STCP,SC04,SU3C,T3CA,TW00,TM00,UT3P,WR00,AU3P,APH3,AF00,ZCST,MI00,CDM0","color":null,"tokens":["b74979f90e209a12","1c9886ecbbf0836e"],"state":"online","in_service":false,"id_s":"1234","calendar_enabled":true,"api_version":6,"backseat_token":null,"backseat_token_updated_at":null}],"count":1}'}
+    headers:
+      Cache-Control: ['max-age=0, private, must-revalidate']
+      Connection: [keep-alive]
+      Content-Length: ['563']
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Tue, 22 Jan 2019 00:11:05 GMT']
+      ETag: [W/"80301a5d122271a36d6e18a95d133d22"]
+      Server: [nginx]
+      X-Content-Type-Options: [nosniff]
+      X-Frame-Options: [SAMEORIGIN, SAMEORIGIN]
+      X-Request-Id: [fa8b6a3f-a1b6-4b92-b228-4a1133761998]
+      X-Runtime: ['0.187736']
+      X-TXID: [239d6a8d0fff87b08a90c008b800abd5]
+      X-XSS-Protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1
