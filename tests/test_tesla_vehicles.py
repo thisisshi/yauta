@@ -10,7 +10,7 @@ from .common import yauta_vcr
 class TeslaVehicleTest(TestCase):
     @yauta_vcr.use_cassette('test_tesla_get_vehicle_details_by_id')
     def test_get_tesla_vehicle_details_by_id(self):
-        vehicle_id = os.environ.get('TESLA_VEHICLE_ID', 'xxxxxxxx')
+        vehicle_id = 'xxxxxxxx'
         access_token = os.environ.get('TESLA_ACCESS_TOKEN', 'xxxxxxxx')
         t = TeslaAPI(
            email='xxxxxxxx',

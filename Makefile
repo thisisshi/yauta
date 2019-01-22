@@ -9,3 +9,6 @@ clean:
 
 lint:
 	flake8 yauta
+
+test:
+	pytest tests
